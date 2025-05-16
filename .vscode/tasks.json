@@ -1,0 +1,44 @@
+{
+    "version" : "2.0.0",
+    "tasks" : [
+        {
+            "label":"Git Add + Commit (Add)",
+            "type" : "shell",
+            "command" : "git add . && git commit -m \"Add: 문제 풀이 추가\" && git push origin main",
+            "options" : {
+                "shell" : {
+                    "executable": "cmd.exe",
+                    "args": ["/d","/c"]
+                }
+            },
+            "group": "build",
+            "problemMatcher" : []
+        },
+        {
+            "label":"Git Add + Commit (Fix)",
+            "type" : "shell",
+            "command" : "git add. && git commit -m \"Fix: 문제 풀이 수정\" && git push origin main",
+            "options" : {
+                "shell" : {
+                    "executable": "cmd.exe",
+                    "args": ["/d","/c"]
+                }
+            },
+            "group":"build",
+            "problemMatcher" : []
+        },
+        {
+            "label":"Git Add + Commit (Docs)",
+            "type" : "shell",
+            "command" : "git add. && git commit -m \"Docs: 문제 정리 및 추가\" && git push origin main",
+            "options" : {
+                "shell" : {
+                    "executable": "cmd.exe",
+                    "args": ["/d","/c"]
+                }
+            },
+            "group":"build",
+            "problemMatcher" : []
+        }
+    ]
+}
