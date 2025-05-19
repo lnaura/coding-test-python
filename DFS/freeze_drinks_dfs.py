@@ -3,7 +3,7 @@ n,m = map(int,input().split())
 graph =[list(map(int,input())) for _ in range(n)]
 
 def dfs(x,y):
-    # 주어진 범위를 벗어나면 종료료
+    # 주어진 범위를 벗어나면 종료
     if !(0 <= x < n and 0 <= y <= m):
         return False
     
