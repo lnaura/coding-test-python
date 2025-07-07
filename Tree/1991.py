@@ -1,4 +1,4 @@
-tree = {}
+tree = {}  # dictionary
 n = int(input())
 
 for i in range(n):
