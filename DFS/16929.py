@@ -13,23 +13,23 @@ def DFS(x,y,px,py,color):
     for dx,dy in directions:
         nx,ny = x + dx, y + dy
 
-        if 0 <= nx < n and 0 <= ny < m:
-            if nx == px and ny == py:
-                continue
+        if 0 <= nx < n and 0 <= ny < m:  # 범위 안 ?
+            if nx == px and ny == py:   # 이전에 지나온 곳과 다음에 갈 곳이 같으면
+                continue                # 안됨. -> 전으로 돌아가는 것이기 때문
             
-            if game[nx][ny] == color:
-                if visited[nx][ny]:
-                    return True
+            if game[nx][ny] == color:     # 다음 칸이 같은 컬러이면서
+                if visited[nx][ny]:       # 방문했으면 한바퀴 돈 것임.
+                    return True           # True 리턴 후 끝
 
-                if DFS(nx,ny,x,y,color):
-                    return True
+                if DFS(nx,ny,x,y,color):  # 방문하지 않았으면 재귀하고 거기서 True 리턴하면
+                    return True           # True 리턴 하고 끝
     return False
 
-for i in range(n):
+for i in range(n):     # 모든 곳을 탐색하기위해 (모든 구역을)
     for j in range(m):
-        if not visited[i][j]:
-            if DFS(i,j,-1,-1,game[i][j]):
-                print("Yes")
+        if not visited[i][j]: # 방문하지 않은!
+            if DFS(i,j,-1,-1,game[i][j]): # 첫 시작점의 이전값은 -1,-1
+                print("Yes")              # 리턴이 1이면 yes 출력 후 프로그램 끝내기
                 exit()
 
 print("No")
