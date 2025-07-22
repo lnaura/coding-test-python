@@ -3,6 +3,7 @@ expression = input()
 result = []
 stack = []
 
+
 priority = {
     '*': 2,
     '/': 2,
